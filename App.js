@@ -23,7 +23,7 @@ const App = createBottomTabNavigator(
 					);
 				}
 			}
-		}, 
+		},
 		Explore: {
 			screen: HomeScreen,
 			navigationOptions: {

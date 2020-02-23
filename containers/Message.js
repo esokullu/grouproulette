@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import { View } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat'
@@ -44,3 +45,4 @@ class Message extends React.Component {
   }
 
 export default Message;
+*/
