@@ -3,10 +3,11 @@ import { View, Image } from 'react-native';
 //import Image from 'react-native-remote-svg'
 import Onboarding from 'react-native-onboarding-swiper';
 
-const Login = () => {
-
+const Login = ({ navigation }) => {
+  console.log("in")
   return (
     <Onboarding
+      onSkip={() => navigation.navigate("App")}  // 
       pages={[
         {
           backgroundColor: '#fff',

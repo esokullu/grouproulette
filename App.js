@@ -1,6 +1,6 @@
 import React from "react";
 import { Text } from "react-native";
-import { createBottomTabNavigator, createAppContainer } from "react-navigation";
+import { createBottomTabNavigator, createAppContainer, createSwitchNavigator, createStackNavigator } from "react-navigation";
 import styles from "./assets/styles";
 import HomeScreen from "./containers/Home";
 import MatchesScreen from "./containers/Matches";
@@ -16,7 +16,7 @@ import Icon from "./components/Icon";
 
 const App = createBottomTabNavigator(
 	{
-		///*
+		/*
 		Login: {
 			screen: LoginScreen,
 			navigationOptions: {
@@ -30,7 +30,7 @@ const App = createBottomTabNavigator(
 				}
 			}
 		},
-		//*/
+		*/
 		Explore: {
 			screen: HomeScreen,
 			navigationOptions: {
@@ -108,16 +108,19 @@ const App = createBottomTabNavigator(
 	}
 );
 
-/*
-const RootStack = createStackNavigator();
-function CoreApp() {
-	return (
-		<RootStack.Navigator>
-		  <RootStack.Screen name="Onboard" component={LoginScreen} />
-		  <RootStack.Screen name="Main" component={App} />
-		</RootStack.Navigator>
-	  );
-  }
-*/
-export default createAppContainer(App);
+const CoreApp = createSwitchNavigator({
+	/*
+	Loading: {
+	  screen: Example,
+	},
+	*/
+	Auth: {
+	  screen: LoginScreen,
+	},
+	App: {
+	  screen: App,
+	},
+});
+
+export default createAppContainer(CoreApp);
 //export default createAppContainer(CoreApp);
