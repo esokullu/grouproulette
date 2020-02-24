@@ -9,14 +9,14 @@ import ProfileScreen from "./containers/Profile";
 import LoginScreen from "./containers/Login";
 import Icon from "./components/Icon";
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+//import { NavigationContainer } from '@react-navigation/native';
+//import { createStackNavigator } from '@react-navigation/stack';
 
 
 
 const App = createBottomTabNavigator(
 	{
-		/*
+		///*
 		Login: {
 			screen: LoginScreen,
 			navigationOptions: {
@@ -30,7 +30,7 @@ const App = createBottomTabNavigator(
 				}
 			}
 		},
-		*/
+		//*/
 		Explore: {
 			screen: HomeScreen,
 			navigationOptions: {
@@ -108,6 +108,7 @@ const App = createBottomTabNavigator(
 	}
 );
 
+/*
 const RootStack = createStackNavigator();
 function CoreApp() {
 	return (
@@ -117,6 +118,6 @@ function CoreApp() {
 		</RootStack.Navigator>
 	  );
   }
-
-//export default createAppContainer(App);
-export default createAppContainer(CoreApp);
+*/
+export default createAppContainer(App);
+//export default createAppContainer(CoreApp);
