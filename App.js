@@ -6,7 +6,7 @@ import HomeScreen from "./containers/Home";
 import MatchesScreen from "./containers/Matches";
 import MessagesScreen from "./containers/Messages";
 import ProfileScreen from "./containers/Profile";
-import LoginScreen from "./containers/Login";
+import OnboardScreen from "./containers/Onboard";
 import Icon from "./components/Icon";
 
 //import { NavigationContainer } from '@react-navigation/native';
@@ -114,8 +114,8 @@ const CoreApp = createSwitchNavigator({
 	  screen: Example,
 	},
 	*/
-	Auth: {
-	  screen: LoginScreen,
+	Onboard: {
+	  screen: OnboardScreen,
 	},
 	App: {
 	  screen: App,
