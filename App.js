@@ -7,12 +7,11 @@ import MatchesScreen from "./containers/Matches";
 import MessagesScreen from "./containers/Messages";
 import ProfileScreen from "./containers/Profile";
 import OnboardScreen from "./containers/Onboard";
+import Example from "./containers/Login";
 import Icon from "./components/Icon";
 
 //import { NavigationContainer } from '@react-navigation/native';
 //import { createStackNavigator } from '@react-navigation/stack';
-
-
 
 const App = createBottomTabNavigator(
 	{
@@ -108,18 +107,47 @@ const App = createBottomTabNavigator(
 	}
 );
 
-const CoreApp = createSwitchNavigator({
-	/*
-	Loading: {
+
+const AuthStack = createStackNavigator({
+	SignIn:{
 	  screen: Example,
+	  navigationOptions: {
+		headerTitle: 'Sign In',
+	  },
+	},/*
+	CreateAccount: {
+	  screen: Example,
+	  navigationOptions: {
+		headerTitle: 'Create Account',
+	  },
 	},
-	*/
+	ForgotPassword: {
+	  screen: Example,
+	  navigationOptions: {
+		headerTitle: 'Forgot Password',
+	  },
+	},
+	ResetPassword: {
+	  screen: Example,
+	  navigationOptions: {
+		headerTitle: 'Reset Password',
+	  },
+	},*/
+  });
+
+const CoreApp = createSwitchNavigator({
+	Auth: {
+		screen: AuthStack, // https://github.com/ryanmcdermott/react-native-login/blob/master/ReactNativeLogin/App/components/LoggedIn.js
+	  },
 	Onboard: {
-	  screen: OnboardScreen,
+		screen: OnboardScreen,
 	},
 	App: {
-	  screen: App,
-	},
+		screen: App,
+	  },
+	
+	
+	
 });
 
 export default createAppContainer(CoreApp);
